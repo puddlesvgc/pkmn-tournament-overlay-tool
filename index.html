@@ -69,7 +69,7 @@
                                     </ul>
                                     <li><a href="#obs_settings">Connect to OBS</a>.
                                     <!-- <li>Choose which <a href="#battle">OBS Scene</a> your Tournament Overlay is in.</li> -->
-                                    <li>Pick <a href="#battle">sources in your OBS scene to output to</a> (Pokémon icons are Browser sources, everything else is a Text source).</li>
+                                    <li>Pick <a href="#battle">sources in your OBS scene to output to</a> (Pokémon icons are Browser sources, almost everything else is a Text source).</li>
                                     <li>Enter player data in the <a href="#players">table at the bottom of the page</a>, or import your tournament roster from a TOM file.</li>
                                     <li>You're all set! <a href="#battle">Pick your players from the dropdown</a> and easily display information about their team!</li>
                                     <ul>
@@ -115,7 +115,8 @@
                             </p>
                             <div>
                                 <div class="bold important">IMPORTANT!</div>
-                                <div>The Pokémon icons are Browser sources, while all other pieces of data are Text sources in OBS!</div>
+                                <div>The Pokémon icons are Browser sources, and you can style them with <a href="https://github.com/FomTarro/pkmn-tournament-overlay-tool?tab=readme-ov-file#customization" target="_blank">Custom CSS</a> in OBS!</div>
+                                <div>All other pieces of data are Text sources in OBS!</div>
                             </div>
                         </div>
                         <!-- <div id="obs_scene_selection" class="flex flex-col rounded-corner">
@@ -301,7 +302,7 @@
                                 <input id="pairingsSingleSplitter" class="input-small generalSetting" value="/" min="3" max="3" size="3" type="text"/>
                             </div>
                             <div>
-                                <input id="pairingsSingle" readonly> → 
+                                <input id="pairingsSingle" readonly disabled> → 
                                 <input id="pairingsSingleSource" class="sourceSelect sourceSetting" placeholder="Select OBS source..." autoComplete="on" list="textSourceOptions_all"/>
                             </div>
                         </div>
@@ -389,7 +390,7 @@
                                 <input id="standingsSingleSplitter" class="input-small generalSetting" value="/" min="3" max="3" size="3" type="text"/>
                             </div>
                             <div>
-                                <input id="standingsSingle" readonly> → 
+                                <input id="standingsSingle" readonly disabled> → 
                                 <input id="standingsSingleSource" class="sourceSelect sourceSetting" placeholder="Select OBS source..." autoComplete="on" list="textSourceOptions_all"/>
                             </div>
                         </div>
@@ -451,12 +452,12 @@
                             <span id="nonRestrictedUsage" class="font-small">Non-Restricted Mon Usage Statistics</span> → 
                             <input id="nonRestrictedUsageSource" class="sourceSelect sourceSetting" placeholder="Select OBS source..." autoComplete="on" list="browserSourceOptions_all"/>
                         </div>
-                        <iframe id="nonRestrictedUsageSourceFrame" scrolling="auto"></iframe>
+                        <iframe class="resize-both" id="nonRestrictedUsageFrame" scrolling="auto"></iframe>
                         <div>
                             <span id="restrictedUsage" class="font-small">Restricted Mon Usage Statistics</span> → 
                             <input id="restrictedUsageSource" class="sourceSelect sourceSetting" placeholder="Select OBS source..." autoComplete="on" list="browserSourceOptions_all"/>
                         </div>
-                        <iframe id="restrictedUsageSourceFrame" scrolling="auto"></iframe>
+                        <iframe class="resize-both" id="restrictedUsageFrame" scrolling="auto"></iframe>
                     </div>
                 </div>
             </div>

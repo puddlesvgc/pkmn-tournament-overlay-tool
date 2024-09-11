@@ -840,6 +840,7 @@ function loadGeneralSettings(){
         monsPerTeamCount: 4,
         monIconEffect: 'shadow',
         usageCount: 8,
+        usageIconEffect: 'shadow',
     };
     settings = merge(defaultSettings, settings);
 
@@ -869,6 +870,8 @@ function loadGeneralSettings(){
 
     document.getElementById('usageSlider').value = settings.usageCount ?? 8;
     document.getElementById('usageSlider').dispatchEvent(event);
+
+    document.getElementById('usageIconEffect').value = settings.usageIconEffect;
 }
 
 function saveGeneralSettings(){
@@ -889,6 +892,7 @@ function saveGeneralSettings(){
         monsPerTeamCount: document.getElementById('monCountSlider').value,
         monIconEffect: document.getElementById('monIconEffect').value,
         usageCount: document.getElementById('usageSlider').value,
+        usageIconEffect: document.getElementById('usageIconEffect').value,
     };
     localStorage.setItem(GENERAL_SETTINGS_KEY, JSON.stringify(settings));
 }

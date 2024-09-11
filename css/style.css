@@ -258,6 +258,19 @@ input.input-small {
     flex-grow: 1;
 }
 
+.resize-x {
+    resize: horizontal
+}
+
+.resize-y {
+    resize: vertical;
+}
+
+.resize-both {
+    resize: both;
+}
+
+
 .resetButton::before {
     display: inline-block;
     content: '❌';
