@@ -346,6 +346,8 @@ function calculateUsageStatistics(teams, restricted){
     }
 }
 
+// TODO: can this be extracted? It's not related to players directly. 
+// Maybe population could be triggered by an OnPlayersLoaded event?
 function populateUsageDisplay(){
     const populate = (useRestricted, sourceName, frame) => {
         const limit = document.getElementById('usageSlider').value;
@@ -357,7 +359,6 @@ function populateUsageDisplay(){
         const usageIconEffect = document.getElementById('usageIconEffect');
         const effect = usageIconEffect.value;
         url.searchParams.set('effect', effect);
-        console.log(url);
         const source = document.getElementById('usageModule').querySelector(`#${sourceName}`).value;
         document.getElementById('usageModule').querySelector(`#${frame}`).src = url;
         OBS.setBrowserSourceURL(source, url.toString())

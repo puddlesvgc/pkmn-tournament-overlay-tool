@@ -1,5 +1,5 @@
 # TourKOAL (Tournament Knowledge and Overlay Assistant for Livestreams) 
-[v1.3.2 - Check it out!](https://www.skeletom.net/pkmn/tournament-overlay/)
+[v1.4.0 - Check it out!](https://www.skeletom.net/pkmn/tournament-overlay/)
 
 ![TouKOAL Icon illustrated by bonbombs](./img/site/logo_notext1x.png)
 
@@ -124,20 +124,23 @@ With regards to Custom CSS, some selectors to be aware of are:
 
 The following selectors are used to structure Pokémon Icons:
 * `#content`: The entire source.
-    * `.grid`: The class applied to `#content` when displaying a list of Pokémon for Usage Statistics.
-* `.container`: The container including the Pokémon TODO 
+    * `.grid`: The class added to `#content` when displaying a list of Pokémon for Usage Statistics.
+* `.container`: The container wrapping around the Pokémon Icon.
+    * `.single`: The class added to `.container` when displaying an individual Pokémon Icon for Battle.
+    * `.ranking`: The class added to `.container` when displaying a list of Pokémon for Usage Statistics.
 
 The following selectors are used to render Pokémon Icons:
 * `.mon`: The image tag representing the Pokémon species.
 * `.item`: The image tag representing the held item.
 * `.tera`: The image tag representing the Tera type.
-* `.fainted`: The class applied to `#content` when the Pokémon faints and to `.item` when the item is consumed.
+* `.fainted`: The class added to `#content` when the Pokémon faints and to `.item` when the item is consumed.
+* `.subtitle`: The element containing the usage percentage when displaying a list of Pokémon for Usage Statistics.
 
 The following selectors are used to style Pokémon Icons:
-* `.outline`: The class applied to `.mon`, `.item` and `.tera` when the "Outline" icon effect is selected.
-* `.shadow`: The class applied to `.mon`, `.item` and `.tera` when the "Drop Shadow" icon effect is selected.
-* `.shadow_outline`: The class applied to `.mon`, `.item` and `.tera` when the "Outline + Drop Shadow" icon effect is selected.
-* `.custom`: The class applied to `.mon`, `.item` and `.tera` when the "Custom" icon effect is selected. This class provides no styling out-of-the-box; it is meant to be used in conjuction with custom CSS from OBS.
+* `.outline`: The class added to `.mon`, `.item` and `.tera` when the "Outline" icon effect is selected.
+* `.shadow`: The class added to `.mon`, `.item` and `.tera` when the "Drop Shadow" icon effect is selected.
+* `.shadow_outline`: The class added to `.mon`, `.item` and `.tera` when the "Outline + Drop Shadow" icon effect is selected.
+* `.custom`: The class added to `.mon`, `.item` and `.tera` when the "Custom" icon effect is selected. This class provides no styling out-of-the-box; it is meant to be used in conjuction with custom CSS from OBS.
 
 
 ## Credits and Acknowledgements

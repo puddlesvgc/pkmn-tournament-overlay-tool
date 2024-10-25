@@ -4130,7 +4130,7 @@ const SPECIES = [
         name: 'Polchageist'
     },
     {
-        name: 'Sinischa'
+        name: 'Sinistcha'
     },
     {
         name: 'Okidogi'
@@ -4546,6 +4546,9 @@ const ITEMS = [
     },
     {
         name: 'Rocky Helmet'
+    },
+    {
+        name: 'Room Service'
     },
     {
         name: 'Rose Incense'

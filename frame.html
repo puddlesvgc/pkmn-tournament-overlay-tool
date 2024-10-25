@@ -106,9 +106,9 @@
         <template id="icon_template">
             <div class="container">
                 <div class="icon">
-                    <img class="mon" id="mon">
-                    <img class="item" id="item">
-                    <img class="tera" id="tera">
+                    <img class="mon">
+                    <img class="item">
+                    <img class="tera">
                 </div>
                 <div class="subtitle">55%</div>
             </div>
@@ -148,9 +148,9 @@
             } else {
                 const params = urlParams.entries();
                 document.getElementById('content').classList.add('grid');
-                // TODO: filter just the numbers
                 for(const [param, value] of params){
-                    if(param != "effect"){
+                    // The mon stats are keyed on dex number
+                    if(!isNaN(param.replace("_", ""))){
                         const display = template.content.cloneNode(true).querySelector(".container");
                         const monIcon = display.querySelector('.mon');
                         monIcon.src = `./img/pkmn/poke_icon_${param}.png`
