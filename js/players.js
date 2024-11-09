@@ -321,7 +321,7 @@ function calculateUsageStatistics(teams, restricted){
     }
     const filteredMons = allMons.filter(mon => {
         if(mon && mon.length > 0){
-            const monOpt = [...document.getElementsByClassName('monOption')].find(el => el.innerHTML === mon);
+            const monOpt = [...document.getElementsByClassName('monOption')].find(el => el.innerHTML === mon && el.hasAttribute('dexNumber'));
             return monOpt && monOpt.hasAttribute('restricted') == filterByRestricted;
         }else{
             return false;
@@ -334,7 +334,7 @@ function calculateUsageStatistics(teams, restricted){
         const numMons = filteredMons.filter(m => m === mon).length;
         results.push({
             mon: mon,
-            dexNumber: [...document.getElementsByClassName('monOption')].find(el => el.innerHTML === mon).getAttribute('dexNumber'),
+            dexNumber: [...document.getElementsByClassName('monOption')].find(el => el.innerHTML === mon && el.hasAttribute('dexNumber')).getAttribute('dexNumber'),
             percentageOfTeams: ((numMons / teams.length) * 100),
             percentageOfAllMons: ((numMons / totalMons) * 100)
         });
@@ -352,6 +352,7 @@ function populateUsageDisplay(){
     const populate = (useRestricted, sourceName, frame) => {
         const limit = document.getElementById('usageSlider').value;
         const allUsage = calculateUsageStatistics(PLAYER_LIST, useRestricted).usageStats.slice(0, limit);
+        console.log(allUsage);
         const url = new URL(relativeToAbsolutePath('./frame.html'));
         for(const item of allUsage){
             url.searchParams.set(`${item.dexNumber}`, `${item.percentageOfTeams.toFixed(2)}`);

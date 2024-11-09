@@ -972,6 +972,13 @@ if(urlParams.get('unown')){
 function getChangeLog(){
     const changes = [
         {
+            date: "November 5th 2024",
+            version: "1.4.0",
+            changes: [
+                "Added Usage Statistic HTML sources for general and restricted categories."
+            ]
+        },
+        {
             date: "March 5th 2024",
             version: "1.3.0",
             changes: [
