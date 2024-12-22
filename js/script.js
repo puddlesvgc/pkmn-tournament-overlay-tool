@@ -514,6 +514,12 @@ function attachEventListeners(){
             }
         }
         const playerSelectors = pairingsModule.querySelectorAll('.playerSelect')
+        document.getElementById('pairingsRecordToggle').addEventListener('change', () => {
+            for(let playerSelector of playerSelectors){
+                const event = new Event('change');
+                playerSelector.dispatchEvent(event);
+            }
+        });
         for(let playerSelector of playerSelectors){
             playerSelector.addEventListener('change', () => { 
                 updatePairingsPlayers();
@@ -639,6 +645,13 @@ function attachEventListeners(){
         }
         document.getElementById('standingsCount').innerText = val;
         updateStandingsSingle();
+    });
+
+    document.getElementById('standingsRecordToggle').addEventListener('change', () => {
+        for(let playerSelector of standingsPlayerSelectors){
+            const event = new Event('change');
+            playerSelector.dispatchEvent(event);
+        }
     });
 
     // Hook up Usage Statistics

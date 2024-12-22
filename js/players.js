@@ -351,7 +351,7 @@ async function importStandingsFromTOM(file){
     const playerOptions = document.querySelectorAll('.playerOption');
     for(let player of standings.allStandings){
         for(let opt of [...playerOptions].filter(o => o.value === findPlayerByName(player.name)?.uuid)){
-            opt.setAttribute("record", `(${player.record.wins}/${player.record.ties}/${player.record.losses})`);
+            opt.setAttribute("record", `(${player.record.wins}/${player.record.losses}/${player.record.ties})`);
         }
     }
 
