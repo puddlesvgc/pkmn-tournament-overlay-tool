@@ -986,7 +986,7 @@ function getChangeLog(){
     const changes = [
         {
             date: "November 5th 2024",
-            version: "1.4.0",
+            version: "1.4.1",
             changes: [
                 "Added Usage Statistic HTML sources for general and restricted categories."
             ]
