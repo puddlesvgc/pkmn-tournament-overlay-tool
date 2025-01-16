@@ -462,6 +462,11 @@ input.input-small {
     top: 0.25em;
 }
 
+.usageFrame {
+    aspect-ratio: 4/2;
+    width: 50%;
+}
+
 .reset-col {
     gap: 1em;
 }

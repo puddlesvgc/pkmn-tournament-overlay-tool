@@ -56,9 +56,11 @@ function calculateUsageStatistics(teams, restricted){
     }
 }
 
+/**
+ * Populates the Usage Statistic graphic
+ */
 function populateUsageDisplay(){
-    const populate = (useRestricted, sourceName, frame) => {
-        const limit = document.getElementById('usageSlider').value;
+    const populate = (useRestricted, sourceName, frame, limit) => {
         const allUsage = calculateUsageStatistics(PLAYER_LIST, useRestricted).usageStats.slice(0, limit);
         const url = new URL(relativeToAbsolutePath('./frame.html'));
         for(const item of allUsage){
@@ -71,6 +73,6 @@ function populateUsageDisplay(){
         document.getElementById('usageModule').querySelector(`#${frame}`).src = url;
         OBS.setBrowserSourceURL(source, url.toString())
     }
-    populate(false, 'nonRestrictedUsageSource', 'nonRestrictedUsageFrame');
-    populate(true, 'restrictedUsageSource', 'restrictedUsageFrame');
+    populate(false, 'nonRestrictedUsageSource', 'nonRestrictedUsageFrame', document.getElementById('usageSlider').value);
+    populate(true, 'restrictedUsageSource', 'restrictedUsageFrame', document.getElementById('restrictedUsageSlider').value);
 }

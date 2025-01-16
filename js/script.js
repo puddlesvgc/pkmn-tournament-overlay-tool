@@ -661,6 +661,12 @@ function attachEventListeners(){
         populateUsageDisplay();
     });
 
+    document.getElementById('restrictedUsageSlider').addEventListener('input', () => {
+        const val = document.getElementById('restrictedUsageSlider').value
+        document.getElementById('restrictedUsageCount').innerText = val;
+        populateUsageDisplay();
+    });
+
     document.getElementById('usageIconEffect').addEventListener('change', () => {
         populateUsageDisplay();
     })
@@ -853,6 +859,7 @@ function loadGeneralSettings(){
         monsPerTeamCount: 4,
         monIconEffect: 'shadow',
         usageCount: 8,
+        restrictedUsageCount: 4,
         usageIconEffect: 'shadow',
     };
     settings = merge(defaultSettings, settings);
@@ -882,7 +889,10 @@ function loadGeneralSettings(){
     document.getElementById('monIconEffect').value = settings.monIconEffect;
 
     document.getElementById('usageSlider').value = settings.usageCount ?? 8;
+    document.getElementById('restrictedUsageSlider').value = settings.restrictedUsageCount ?? 4;
+    
     document.getElementById('usageSlider').dispatchEvent(event);
+    document.getElementById('restrictedUsageSlider').dispatchEvent(event);
 
     document.getElementById('usageIconEffect').value = settings.usageIconEffect;
 }
@@ -905,6 +915,7 @@ function saveGeneralSettings(){
         monsPerTeamCount: document.getElementById('monCountSlider').value,
         monIconEffect: document.getElementById('monIconEffect').value,
         usageCount: document.getElementById('usageSlider').value,
+        restrictedUsageCount: document.getElementById('restrictedUsageSlider').value,
         usageIconEffect: document.getElementById('usageIconEffect').value,
     };
     localStorage.setItem(GENERAL_SETTINGS_KEY, JSON.stringify(settings));
